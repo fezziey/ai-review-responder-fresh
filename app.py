@@ -15,95 +15,94 @@ personalities = {
     "Custom Brand": "Custom voice loading..."
 }
 
+# YOTPO-INSPIRED CSS
 st.markdown("""
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap');
-html, body, [class*="css"]  {
-    font-family: 'Inter', sans-serif;
-}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+html, body, [class*="css"] {font-family: 'Poppins', sans-serif;}
 .main {
-    background: linear-gradient(135deg, #0f0f15 0%, #1a1a23 50%, #120f18 100%);
-    color: #e8d5b7;
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 50%, #f1f5f9 100%);
+    color: #1e293b;
     padding: 2rem;
-    position: relative;
-}
-.main::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: radial-gradient(circle at 30% 20%, rgba(184,151,120,0.05) 0%, transparent 40%),
-                radial-gradient(circle at 70% 80%, rgba(139,69,19,0.03) 0%, transparent 40%);
-    pointer-events: none;
-    z-index: 0;
 }
 .stApp {background: transparent !important;}
-.stSelectbox > div > div > div { 
-    background: linear-gradient(145deg, #1a1a1a, #2d2d2d) !important;
-    border: 2px solid #b89778 !important; 
-    border-radius: 12px !important;
-    box-shadow: 0 8px 32px rgba(184,151,120,0.3) !important;
-}
-.stSelectbox [data-baseweb="select"] {color: #e8d5b7 !important}
-.luxury-preview {
-    background: linear-gradient(90deg, #1a1a1a, #2d1b14);
-    border-left: 6px solid #b89778; 
-    padding: 1.5rem; 
+
+/* Yotpo Blue-Gold Cards */
+.yotpo-card {
+    background: white;
+    border: 1px solid #e2e8f0;
     border-radius: 16px;
-    color: #e8d5b7;
-    font-size: 1.1rem;
-    font-weight: 500;
-    box-shadow: 0 12px 40px rgba(184,151,120,0.2);
-    backdrop-filter: blur(10px);
-    margin: 1rem 0;
+    padding: 2rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08), 0 1px 3px rgba(0,0,0,0.1);
+    margin-bottom: 1.5rem;
 }
+.stSelectbox > div > div > div { 
+    background: white !important;
+    border: 2px solid #3b82f6 !important; 
+    border-radius: 12px !important;
+    box-shadow: 0 4px 12px rgba(59,130,246,0.15) !important;
+}
+.stSelectbox [data-baseweb="select"] {color: #1e293b !important}
+
+/* Live preview - Yotpo style */
+.yotpo-preview {
+    background: linear-gradient(90deg, #eff6ff, #dbeafe);
+    border-left: 5px solid #3b82f6; 
+    padding: 1.5rem; 
+    border-radius: 12px;
+    color: #1e293b;
+    font-weight: 500;
+    box-shadow: 0 4px 12px rgba(59,130,246,0.1);
+}
+
+/* Yotpo Blue buttons */
 .stButton > button {
-    background: linear-gradient(45deg, #b89778, #d4af37) !important;
+    background: linear-gradient(135deg, #3b82f6, #1d4ed8) !important;
     border-radius: 12px !important;
     font-weight: 600 !important;
-    font-family: 'Inter', sans-serif !important;
-    box-shadow: 0 8px 25px rgba(184,151,120,0.4) !important;
-    border: none !important;
+    box-shadow: 0 4px 12px rgba(59,130,246,0.3) !important;
 }
-.metric-card {
-    background: linear-gradient(145deg, #1a1a1a, #2d2d2d);
-    border: 1px solid #b89778;
+
+/* SerpAPI metric */
+.metric-modern {
+    background: linear-gradient(135deg, #eff6ff, #dbeafe);
+    border: 1px solid #93c5fd;
     border-radius: 12px;
     padding: 1.5rem;
-    margin: 0.5rem 0;
-    box-shadow: 0 8px 32px rgba(184,151,120,0.2);
+    text-align: center;
 }
-.css-1gyo7hw {border: 1px solid #b89778 !important}
 </style>
 """, unsafe_allow_html=True)
 
-st.set_page_config(page_title="Enterprise Review AI", page_icon="💎", layout="wide")
+st.set_page_config(page_title="Review AI", page_icon="⭐", layout="wide")
 
+# YOTPO HEADER
 st.markdown("""
 <div style='text-align: center; margin-bottom: 3rem;'>
-    <h1 style='font-family: Playfair Display, serif; font-size: 3rem; 
-                background: linear-gradient(45deg, #b89778, #d4af37); 
+    <h1 style='font-family: Poppins, sans-serif; font-size: 3rem; font-weight: 700; 
+                background: linear-gradient(135deg, #3b82f6, #1d4ed8); 
                 -webkit-background-clip: text; -webkit-text-fill-color: transparent; 
-                font-weight: 700; margin: 0;'>Enterprise Review AI</h1>
-    <p style='color: #b89778; font-size: 1.2rem; font-weight: 500;'>Intelligent Brand Voice Personalization</p>
+                margin: 0;'>Review AI Pro</h1>
+    <p style='color: #64748b; font-size: 1.2rem; font-weight: 500;'>10x Faster Review Responses | Enterprise Ready</p>
 </div>
 """, unsafe_allow_html=True)
 
-col1, col2, col3 = st.columns([3, 2, 2])
+col1, col2, col3 = st.columns([3, 2, 1.5])
 
 with col3:
-    st.markdown("### 🔄 **SerpAPI Intelligence**")
+    st.markdown('<div class="yotpo-card">', unsafe_allow_html=True)
+    st.markdown("### 🔄 SerpAPI Dashboard")
     st.markdown("""
-    <div class="metric-card">
-    <h3 style='color: #b89778; margin: 0;'>Queries / Limit</h3>
-    <h2 style='font-family: Playfair Display, serif; color: #e8d5b7; margin: 0.5rem 0;'>123/500</h2>
+    <div class="metric-modern">
+    <h3 style='color: #1e293b; margin: 0;'>Queries Used</h3>
+    <h2 style='font-size: 2rem; color: #3b82f6; margin: 0.5rem 0;'>123/500</h2>
     </div>
     """, unsafe_allow_html=True)
     st.progress(0.25)
+    st.markdown('</div>', unsafe_allow_html=True)
 
 with col1:
+    st.markdown('<div class="yotpo-card">', unsafe_allow_html=True)
     reviews_df = pd.DataFrame({
         'reviewer': ['John D.', 'Sarah K.', 'Mike L.'],
         'rating': [5, 1, 4],
@@ -111,22 +110,30 @@ with col1:
         'date': pd.to_datetime(['2026-02-10', '2026-02-12', '2026-02-13'])
     })
     
-    st.markdown("### 🆕 **New Reviews**")
-    st.dataframe(reviews_df, use_container_width=True)
+    st.markdown("### 🆕 Recent Reviews")
+    st.dataframe(reviews_df, use_container_width=True, hide_index=True)
+    st.markdown('</div>', unsafe_allow_html=True)
 
 with col2:
-    st.markdown("### 🎩 **Enterprise Brand Voice**")
-    personality = st.selectbox("🎭 **Select Voice**", list(personalities.keys()))
+    st.markdown('<div class="yotpo-card">', unsafe_allow_html=True)
+    st.markdown("### 🎙️ Brand Voice")
+    
+    personality = st.selectbox("Select Voice", list(personalities.keys()))
     preview_text = personalities[personality] if personality != "Custom Brand" else "Hi from Your Brand! Thanks for the love! 💯"
+    
     st.markdown(f"""
-    <div class="luxury-preview">
-    ✦ **Executive Preview:** {preview_text}
+    <div class="yotpo-preview">
+    <strong>→ Live Preview:</strong> {preview_text}
     </div>
     """, unsafe_allow_html=True)
     
-    if st.button("✨ Generate Enterprise Reply", help="AI-powered response"):
-        st.success("✅ Enterprise reply generated!")
+    if st.button("✨ Generate Reply", help="AI-powered brand response"):
+        st.success("✅ Reply generated!")
+    st.markdown('</div>', unsafe_allow_html=True)
 
+# Smart review expanders
+st.markdown('<div class="yotpo-card">', unsafe_allow_html=True)
+st.markdown("### 📝 Review Responses")
 for idx, row in reviews_df.iterrows():
     with st.expander(f"{'⭐' * int(row['rating'])} {row['reviewer']}: {row['text'][:50]}..."):
         if row['rating'] >= 4:
@@ -136,21 +143,23 @@ for idx, row in reviews_df.iterrows():
         else:
             reply = f"{personalities[personality]} We're so sorry {row['reviewer']} - DM us to make this right immediately! 🙏"
         
-        st.markdown(f"**🤖 AI Reply ({personality}):** {reply}")
+        st.markdown(f"**🤖 AI Reply:** {reply}")
         if st.button("✅ Post Reply", key=f"post_{idx}"):
             st.success(f"Posted to {row['reviewer']}! 🎉")
+st.markdown('</div>', unsafe_allow_html=True)
 
-fig = px.bar(reviews_df, x='rating', title="Sentiment Distribution", 
-             color='rating', color_continuous_scale=['#8b7355', '#b89778', '#d4af37'])
+# Yotpo-style graph
+fig = px.bar(reviews_df, x='rating', title="📊 Sentiment Trends", 
+             color='rating', color_continuous_scale=['#93c5fd', '#3b82f6', '#1d4ed8'])
 fig.update_layout(
     paper_bgcolor='rgba(0,0,0,0)',
-    plot_bgcolor='rgba(15,15,21,0.6)',
-    font_color='#e8d5b7',
-    title_font_family='Playfair Display',
-    font_size=14
+    plot_bgcolor='white',
+    font_color='#1e293b',
+    font_family='Poppins',
+    title_font_size=18,
+    bargap=0.3
 )
 st.plotly_chart(fig, use_container_width=True)
 
 st.markdown("---")
-st.markdown("### ⚡ Ready to Deploy")
-st.caption("Live SerpAPI dashboard | 10+ brand voices | Enterprise ready")
+st.markdown("*Powered by SerpAPI | 10 Brand Voices | Enterprise Scale*")
